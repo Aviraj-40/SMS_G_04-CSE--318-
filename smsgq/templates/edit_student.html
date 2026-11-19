@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Student Information</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Edit Student Information</h2>
+        
+        <form action="" method="POST">
+            {% csrf_token %}
+            
+            <div class="input-group">
+                <label for="name">Student Name:</label>
+                <input type="text" name="name" value="{{ student.name }}" placeholder="Enter Name" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="dept">Department:</label>
+                <input type="text" name="dept" value="{{ student.dept }}" placeholder="Enter Department" required>
+            </div>
+            
+            <button type="submit">Update Student</button>
+        </form>
+
+        <div style="text-align: center; margin-top: 15px;">
+            <a href="{% url 'home' %}" style="text-decoration: none; color: #007bff; font-weight: bold;">← Back to Home</a>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: smsg4
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn smsgq.wsgi:back" 
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0
+
+        
